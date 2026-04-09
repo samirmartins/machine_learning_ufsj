@@ -51,6 +51,7 @@ A disciplina apresenta fundamentos e aplicações de aprendizado de máquina vol
 - Support Vector Machines
 - Árvores de decisão e florestas aleatórias
 - Uso da biblioteca Scikit-Learn para classificação
+- Outros sistemas classificadores
 
 ### 6. Técnicas de Regressão
 - Uso da biblioteca Scikit-Learn para regressão
