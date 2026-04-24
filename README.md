@@ -13,6 +13,10 @@ Repositório de apoio à disciplina **Machine Learning Aplicado à Engenharia**,
 
 A disciplina apresenta fundamentos e aplicações de aprendizado de máquina voltados a problemas reais de Engenharia. Ao longo do curso, os estudantes desenvolvem base em estatística, probabilidade, manipulação de dados, classificação, regressão e sistemas de recomendação, com foco em implementação prática em Python.
 
+## Soluções dos Trabalhos
+
+As soluções do **Trabalho 1 (T1)** de cada grupo encontram-se em [REPOSITORIOS_T1.MD](REPOSITORIOS_T1.MD).
+
 ## Objetivos
 
 - Aplicar técnicas de aprendizado de máquina em problemas de Engenharia.
@@ -78,18 +82,6 @@ A disciplina utiliza uma abordagem teórico-prática, combinando:
 ## Ambiente de Desenvolvimento
 
 Recomenda-se o uso de **Python** com gerenciamento de ambiente por **Conda**.
-
-## Bibliotecas Utilizadas
-
-Ao longo da disciplina, poderão ser utilizadas bibliotecas como:
-
-- `numpy`
-- `pandas`
-- `matplotlib`
-- `scikit-learn`
-- `scipy`
-- `jupyter`
-- `sysidentpy`
 
 
 ---
