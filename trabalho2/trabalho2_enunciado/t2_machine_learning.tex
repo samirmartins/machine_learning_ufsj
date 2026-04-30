@@ -1,0 +1,337 @@
+%===============================================================================
+% Trabalho Computacional 2 - Machine Learning aplicado a Engenharia
+% Template IFAC/SBA adaptado para enunciado de trabalho
+%===============================================================================
+\documentclass[a4paper]{ifacconf}
+
+\usepackage{graphicx,amsmath,url}
+\usepackage[round]{natbib}
+
+\def\portugues{1}
+
+\ifx\portugues\undefined
+\def\portugues{0}
+\fi
+
+\if\portugues0
+   \usepackage[english]{babel}
+  \else
+   \usepackage[spanish,brazil,english]{babel}
+\fi
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ae}
+\emergencystretch=2em
+
+\if\portugues1
+ \newtheorem{teorema}[thm]{{\em Teorema}}{ }
+ \newtheorem{lema}[thm]{{\em Lema}}{ }
+ \newtheorem{corolario}[thm]{{\em Corolário}}{ }
+ \newenvironment{prova}{{\bf Prova.}}{ }
+\fi
+
+\begin{document}
+
+\selectlanguage{brazil}
+
+\begin{frontmatter}
+
+\title{Trabalho Computacional 2: Modelagem, Validação e Comparação de Modelos de Aprendizado de Máquina\thanksref{footnoteinfo}}
+
+\thanks[footnoteinfo]{Disciplina Machine Learning aplicado à Engenharia, Curso de Engenharia Elétrica, Universidade Federal de São João del-Rei.}
+
+\author[First]{Samir Angelo Milani Martins}
+
+\address[First]{Departamento de Engenharia Elétrica, Universidade Federal de São João del-Rei, MG (e-mail: martins@ufsj.edu.br).}
+
+\selectlanguage{english}
+\renewcommand{\abstractname}{{\bf Abstract:~}}
+\begin{abstract}
+This document describes the second computational assignment of the course Machine Learning Applied to Engineering. The assignment requires each group to extend the real-data study developed in the first assignment by formulating a supervised learning problem, implementing at least three classification or regression models, validating them properly, and comparing their performance using quantitative metrics. The emphasis is on reproducibility, methodological rigor, critical interpretation, and engineering relevance.
+
+\vskip 1mm
+\selectlanguage{brazil}
+{\noindent \bf Resumo}: Este documento apresenta o enunciado do Trabalho Computacional 2 da disciplina Machine Learning aplicado à Engenharia. O trabalho exige que cada grupo dê continuidade ao estudo com dados reais desenvolvido no Trabalho 1, formulando um problema de aprendizado supervisionado, implementando ao menos três modelos de classificação ou regressão, validando-os de forma adequada e comparando seus resultados por meio de métricas quantitativas. O foco do trabalho está na reprodutibilidade, no rigor metodológico, na interpretação crítica e na relevância dos resultados para problemas de Engenharia.
+\end{abstract}
+
+\selectlanguage{english}
+\begin{keyword}
+Machine Learning; classification; regression; model validation; engineering applications.
+
+\vskip 1mm
+\selectlanguage{brazil}
+{\noindent\it Palavras-chaves:} Aprendizado de máquina; classificação; regressão; validação de modelos; aplicações em engenharia.
+\end{keyword}
+
+\selectlanguage{brazil}
+\end{frontmatter}
+
+%===============================================================================
+
+\section{Introdução}
+
+O Trabalho Computacional 1 (T1) teve como objetivo consolidar os conteúdos iniciais da disciplina, incluindo Python, leitura e organização de bases reais, análise exploratória de dados, estatística descritiva, visualização, correlação, probabilidade e discussão conceitual sobre aprendizado de máquina. Nele, os alunos desenvolveram afinidades com ferramentas como: i) gestão de ambientes conda; ii) uso de GitHub; iii) instalação e gestão de bibliotecas.
+
+O Trabalho Computacional 2 (T2) dá continuidade direta a esse processo. Cada grupo deverá utilizar o problema, a base de dados, as análises ou as conclusões obtidas no T1 como ponto de partida para construir uma aplicação supervisionada de aprendizado de máquina. O grupo deverá formular um problema de classificação ou de regressão, implementar ao menos três modelos distintos, validar os resultados de forma tecnicamente adequada e discutir criticamente o desempenho obtido. Os modelos deverão ser comparados \textbf{quantitativamente}, por meio de um mínimo de três métricas distintas.
+
+Este trabalho corresponde à etapa de implementação e comparação de técnicas de aprendizado de máquina, com ênfase nos tópicos de classificação, regressão, uso de bibliotecas como Scikit-Learn e SysIdentPy, além da interpretação dos resultados em contexto de Engenharia.
+
+\section{Objetivos}
+
+O objetivo geral do T2 é desenvolver um estudo computacional completo de aprendizado supervisionado a partir dos dados e resultados obtidos no T1.
+
+São objetivos específicos:
+\begin{itemize}
+    \item formular um problema de classificação ou regressão a partir do tema estudado no T1;
+    \item definir claramente variáveis de entrada, variável alvo e hipótese de modelagem;
+    \item preparar os dados para modelagem, incluindo tratamento, transformação e separação adequada dos conjuntos de treino e teste (ou treino, validação e teste);
+    \item implementar pelo menos três modelos diferentes de aprendizado de máquina;
+    \item avaliar os modelos por meio de métricas adequadas ao tipo de problema;
+    \item comparar quantitativa e qualitativamente os resultados obtidos;
+    \item discutir sobreajuste, subajuste, viés, variância, limitações dos dados e aplicabilidade em Engenharia;
+    \item produzir um artigo técnico no formato deste template.
+\end{itemize}
+
+
+\section{Definição do Problema}
+
+Cada grupo deverá escolher uma formulação de aprendizado supervisionado associada ao próprio T1. A escolha entre classificação e regressão é livre, desde que seja tecnicamente justificada.
+
+O grupo deverá explicitar:
+\begin{itemize}
+    \item qual é o problema escolhido;
+    \item por que ele é relevante;
+    \item qual é a variável alvo;
+    \item quais variáveis serão usadas como entradas, e por quais razões foram escolhidas;
+    \item se o problema é de classificação ou regressão;
+    \item quais limitações da base podem afetar a modelagem.
+\end{itemize}
+
+Não será aceito um T2 desconectado do T1, exceto mediante justificativa formal e aprovação prévia do professor.
+
+\section{Dados e Pré-processamento}
+
+O conjunto de dados utilizado no T2 deverá ser derivado da base analisada no T1. O grupo poderá complementar, reorganizar ou corrigir os dados, desde que documente claramente todas as alterações.
+
+O artigo e o notebook deverão conter:
+\begin{itemize}
+    \item descrição da origem da base de dados;
+    \item resumo das principais conclusões do T1 que motivaram o T2;
+    \item descrição das variáveis utilizadas;
+    \item tratamento de valores ausentes, inconsistentes ou duplicados;
+    \item transformação de variáveis, normalização, padronização ou codificação, quando necessário;
+    \item separação entre variáveis de entrada e variável alvo;
+    \item análise sobre possível desbalanceamento de classes, quando o problema for de classificação.
+\end{itemize}
+
+
+\section{Divisão dos Dados}
+
+O grupo deverá dividir os dados de forma compatível com o problema. A estratégia adotada deve ser justificada no artigo.
+
+Para bases sem dependência temporal explícita, recomenda-se reservar um mínimo de 30\% dos dados para teste, preferencialmente com validação cruzada no conjunto de treinamento.
+
+Para séries temporais, a divisão deve respeitar a ordem cronológica dos dados. Nesse caso, o grupo não deve embaralhar amostras de forma que informações futuras sejam usadas para prever o passado. Recomenda-se separar os dados mais antigos para treinamento e os mais recentes para teste.
+
+Em problemas de classificação com classes desbalanceadas, a divisão deve preservar, sempre que possível, a proporção entre classes.
+
+\section{Modelos Obrigatórios}
+
+Cada grupo deverá implementar e comparar pelo menos três modelos distintos. Os modelos devem ser adequados ao tipo de problema escolhido.
+
+Para problemas de classificação, são exemplos:
+\begin{itemize}
+    \item K-Nearest Neighbors;
+    \item regressão logística;
+    \item Support Vector Machine;
+    \item árvore de decisão;
+    \item floresta aleatória;
+    \item gradient boosting ou métodos similares.
+\end{itemize}
+
+Para problemas de regressão, são exemplos:
+\begin{itemize}
+    \item regressão linear;
+    \item regressão Ridge ou Lasso;
+    \item K-Nearest Neighbors Regressor;
+    \item Support Vector Regression;
+    \item árvore de regressão;
+    \item floresta aleatória para regressão;
+    \item modelos de identificação de sistemas com SysIdentPy, quando pertinente.
+\end{itemize}
+
+O uso de modelos mais avançados é permitido, mas não substitui a necessidade de explicar adequadamente a metodologia, os parâmetros escolhidos e as limitações do modelo. O objetivo principal é comparar modelos de forma correta e \textbf{interpretar os resultados com maturidade técnica}.
+
+\section{Métricas de Avaliação}
+
+As métricas devem ser escolhidas de acordo com o tipo de problema.
+
+\subsection{Classificação}
+
+Para problemas de classificação, o grupo poderá apresentar:
+\begin{itemize}
+    \item matriz de confusão;
+    \item acurácia;
+    \item precisão;
+    \item \textit{recall};
+    \item F1-score;
+    \item ROC-AUC ou outras métricas.
+\end{itemize}
+
+Em problemas com classes desbalanceadas, o grupo deverá discutir por que a acurácia isoladamente pode ser insuficiente.
+
+\subsection{Regressão}
+
+Para problemas de regressão, o grupo poderá apresentar:
+\begin{itemize}
+    \item erro médio absoluto (MAE);
+    \item erro quadrático médio (MSE) ou raiz do erro quadrático médio (RMSE);
+    \item coeficiente de determinação ($R^2$);
+    \item gráfico de valores preditos versus valores reais;
+    \item análise gráfica de resíduos;
+    \item análise de correlação e auto-correlação de resíduos;
+    \item outras métricas.
+\end{itemize}
+
+Os erros devem ser interpretados na unidade física do problema sempre que possível. Por exemplo, erros em potência, tensão, preço, temperatura, glicose, demanda ou outra variável devem ser discutidos em termos práticos.
+
+\section{Resultados Esperados}
+
+O artigo deverá apresentar uma comparação clara entre os modelos. Recomenda-se incluir uma tabela com as métricas principais, conforme o tipo de problema. Um exemplo genérico é apresentado na Tabela~\ref{tab:modelos}.
+
+\begin{table}[hb]
+\begin{center}
+\caption{Exemplo de tabela comparativa de modelos.}\label{tab:modelos}
+\begin{tabular}{lccc}
+Modelo & Métrica 1 & Métrica 2 & Métrica 3 \\\hline
+Modelo A & -- & -- & -- \\
+Modelo B & -- & -- & -- \\
+Modelo C & -- & -- & -- \\\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Além da tabela, o grupo deverá apresentar gráficos que ajudem a interpretar os resultados. São exemplos:
+\begin{itemize}
+    \item matriz de confusão;
+    \item curva ROC ou curva precisão-revocação;
+    \item gráfico de barras comparando métricas;
+    \item gráfico de predição versus valor real;
+    \item gráfico de resíduos;
+    \item importância de variáveis;
+    \item curvas de aprendizado;
+    \item comparação temporal entre valor real e valor estimado.
+\end{itemize}
+
+Todos os gráficos devem ter título, legenda, eixos identificados e interpretação no texto. Gráficos sem análise não serão considerados evidência suficiente.
+
+Discussões são obrigatórias e \textbf{devem ir além da apresentação de números}. O grupo deverá analisar:
+\begin{itemize}
+    \item qual modelo apresentou melhor desempenho e por quê;
+    \item se há sinais de sobreajuste ou subajuste;
+    \item como o dilema viés-variância aparece no problema;
+    \item como o pré-processamento influenciou os resultados;
+    \item quais variáveis parecem mais relevantes;
+    \item quais limitações da base de dados afetam a confiabilidade do modelo;
+    \item se os resultados são coerentes com o fenômeno físico, elétrico, clínico, energético ou operacional estudado;
+    \item quais cuidados seriam necessários para usar o modelo em uma aplicação real.
+\end{itemize}
+
+\textbf{IMPORTANTE:} quando o desempenho for baixo, o grupo não deve esconder o resultado. Deve discutir tecnicamente possíveis causas, como base pequena, ruído, variáveis pouco informativas, classes desbalanceadas, má formulação da variável alvo ou limitações dos modelos testados.
+
+\section{Estrutura do Artigo}
+
+O relatório final deverá ser entregue em formato de artigo científico, usando este template em duas colunas. A estrutura recomendada é:
+
+\begin{enumerate}
+    \item Introdução;
+	\item Conceitos Preliminares; 
+    \item Metodologia;
+    \item Resultados;
+    \item Conclusões;
+    \item Referências Bibliográficas.     
+\end{enumerate}
+
+O artigo deve ter entre 10 e 15 referências bibliográficas, das quais ao menos 5 devem ser artigos científicos publicados a partir de 2024. Deve ter, ainda, entre 6 a 8 páginas, contendo figuras, imagens e tabelas comparativas. Seção de agradecimentos é opcional. Figuras e tabelas devem ser numeradas e citadas no texto.
+
+Trabalhos excepcionalmente bem executados, com contribuição original, boa qualidade técnica, autorização de todos os autores e aprovação do professor, poderão ser posteriormente adaptados para submissão a repositórios científicos, revistas ou eventos acadêmicos.
+
+\section{Como Citar Referências}
+
+As referências bibliográficas devem ser inseridas no arquivo \texttt{.bib} do projeto e citadas ao longo do texto usando os comandos do \LaTeX. Não basta listar referências ao final do artigo: toda referência incluída deve ser efetivamente citada em algum ponto do texto.
+
+Para citar uma referência como parte da frase, em que o autor é sujeito, use \texttt{\textbackslash cite\{chave\}}. Por exemplo:
+\begin{verbatim}
+Segundo \cite{pedregosa2011}, ...
+\end{verbatim}
+
+Para citar uma referência entre parênteses, use \texttt{\textbackslash citep\{chave\}}. Por exemplo:
+\begin{verbatim}
+O Scikit-Learn é amplamente utilizado em 
+aprendizado de máquina \citep{pedregosa2011}.
+\end{verbatim}
+
+A chave da referência é o identificador definido no arquivo \texttt{.bib}. Um exemplo de entrada bibliográfica é:
+\begin{verbatim}
+@article{pedregosa2011,
+  author  = {Pedregosa, Fabian and others},
+  title   = {Scikit-learn: Machine Learning in Python},
+  journal = {Journal of Machine Learning Research},
+  volume  = {12},
+  pages   = {2825--2830},
+  year    = {2011}
+}
+\end{verbatim}
+
+As referências devem priorizar artigos científicos. Páginas de internet, blogs, vídeos e materiais informais devem ser evitados. Bases de dados também devem ser citadas, indicando a fonte original, autores ou instituição responsável, ano e link de acesso, quando disponível.
+
+Ao final do trabalho, o grupo deve verificar se todas as citações aparecem corretamente no PDF e se não há referências sem uso, citações quebradas ou campos bibliográficos incompletos.
+
+
+\section{Notebook e Reprodutibilidade}
+
+Além do artigo, o grupo deverá entregar um notebook \texttt{.ipynb} organizado, contendo todo o fluxo computacional do trabalho em forma sequencial. O notebook deverá permitir que o professor compreenda e reproduza os resultados.
+
+\textit{IMPORTANTE:} os grupos deverão construir o notebook do zero, e não à partir do Notebook entregue em T1. Códigos que foram criados para o T1 poderão ser reaproveitados, caso o grupo necessite. 
+
+O notebook deverá conter:
+\begin{itemize}
+    \item identificação do grupo;
+    \item link do repositório GitHub para T2;
+    \item descrição da base;
+    \item carregamento dos dados;
+    \item pré-processamento;
+    \item divisão dos dados;
+    \item treinamento dos modelos;
+    \item cálculo das métricas;
+    \item geração das figuras usadas no artigo;
+    \item breves comentários em Markdown explicando as decisões tomadas.
+\end{itemize}
+
+O grupo deverá entregar também um arquivo \texttt{environment.yml} (ambiente conda usado). O repositório deve conter os dados utilizados ou instruções claras para obtê-los, respeitando eventuais restrições de tamanho, licença ou privacidade.
+
+\section{Uso de Inteligência Artificial}
+
+O uso de ferramentas de inteligência artificial generativa é permitido como apoio, desde que seja feito de forma ética e transparente, \textbf{e que o grupo saiba exatamente o que está fazendo, como as técnicas funcionam e saibam analisar os resultados obtidos}. O grupo continua responsável por todo o conteúdo entregue, incluindo código, interpretação, resultados, citações e conclusões. Serão penalizadas respostas genéricas, código não compreendido pelo grupo ou textos sem relação direta com os dados analisados.
+
+\section{Informações Adicionais}
+
+\textbf{Data de entrega:} 02/07/2026, via Campus Virtual.
+
+\textbf{Apresentações:} a partir do dia 03/07. Cada grupo terá \textbf{20 minutos} para apresentar o trabalho, seguida de discussões. A apresentação deve focar no problema, metodologia, modelos, resultados e discussão crítica.
+
+\section{Conclusão}
+
+O T2 deve demonstrar que o grupo é capaz de transformar uma análise exploratória inicial em um estudo de aprendizado de máquina supervisionado. Espera-se que o trabalho apresente uma formulação clara do problema, implemente modelos adequados, compare resultados de forma justa e interprete criticamente as conclusões no contexto de Engenharia.
+
+O resultado final não deve ser apenas um conjunto de códigos ou métricas. Deve ser um estudo técnico coerente, reprodutível e bem justificado, capaz de mostrar as possibilidades e limitações do uso de Machine Learning em dados reais.
+
+\section*{Agradecimentos}
+
+Esta seção é opcional no artigo dos grupos. Caso seja usada, deve registrar apoios técnicos, bases de dados, laboratórios, equipes ou pessoas que contribuíram para a realização do trabalho.
+
+\nocite{grus2020,muller2016,geron2020,nielsen2021,pedregosa2011,lacerda2020}
+\bibliography{ifacconf}
+
+\end{document}

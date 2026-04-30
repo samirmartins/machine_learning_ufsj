@@ -1,0 +1,53 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{G{\'e}ron(2020)}]{geron2020}
+G{\'e}ron, A. (2020).
+\newblock \emph{M{\~a}os {\`a} Obra: Aprendizado de M{\'a}quina com
+  Scikit-Learn, Keras e TensorFlow}.
+\newblock Alta Books, Rio de Janeiro, 2 edition.
+
+\bibitem[{Grus(2020)}]{grus2020}
+Grus, J. (2020).
+\newblock \emph{Data Science do Zero: Noções Fundamentais com Python}.
+\newblock Alta Books, Rio de Janeiro, 2 edition.
+
+\bibitem[{Lacerda et~al.(2020)Lacerda, da~Andrade, Oliveira, and
+  Martins}]{lacerda2020}
+Lacerda, W.R., da~Andrade, L.P.C., Oliveira, S.C.P., and Martins, S.A.M.
+  (2020).
+\newblock Sysidentpy: A python package for system identification using narmax
+  models.
+\newblock \emph{Journal of Open Source Software}, 5(54), 2384.
+\newblock \doi{10.21105/joss.02384}.
+\newblock \urlprefix\url{https://doi.org/10.21105/joss.02384}.
+
+\bibitem[{M{\"u}ller and Guido(2016)}]{muller2016}
+M{\"u}ller, A.C. and Guido, S. (2016).
+\newblock \emph{Introduction to Machine Learning with Python: A Guide for Data
+  Scientists}.
+\newblock O'Reilly Media, Sebastopol.
+
+\bibitem[{Nielsen(2021)}]{nielsen2021}
+Nielsen, A. (2021).
+\newblock \emph{An{\'a}lise Pr{\'a}tica de S{\'e}ries Temporais: Predi{\c
+  c}{\~a}o com Estat{\'i}stica e Aprendizado de M{\'a}quina}.
+\newblock Alta Books, Rio de Janeiro.
+
+\bibitem[{Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel,
+  Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot, and Duchesnay}]{pedregosa2011}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
+  O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J.,
+  Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and Duchesnay, {\'E}.
+  (2011).
+\newblock Scikit-learn: Machine learning in python.
+\newblock \emph{Journal of Machine Learning Research}, 12, 2825--2830.
+
+\end{thebibliography}

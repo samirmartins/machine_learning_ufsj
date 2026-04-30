@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: t2_machine_learning.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: ifacconf.bst
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+Database file #1: ifacconf.bib
+You've used 6 entries,
+            2921 wiz_defined-function locations,
+            623 strings with 6050 characters,
+and the built_in function-call counts, 3865 in all, are:
+= -- 269
+> -- 218
+< -- 4
++ -- 81
+- -- 75
+* -- 296
+:= -- 620
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 53
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 273
+empty$ -- 280
+format.name$ -- 89
+if$ -- 747
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 71
+newline$ -- 41
+num.names$ -- 24
+pop$ -- 144
+preamble$ -- 1
+purify$ -- 49
+quote$ -- 0
+skip$ -- 87
+stack$ -- 0
+substring$ -- 109
+swap$ -- 143
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 42
+warning$ -- 0
+while$ -- 21
+width$ -- 0
+write$ -- 88
