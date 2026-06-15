@@ -58,8 +58,13 @@ As soluções do **Trabalho 1 (T1)** de cada grupo encontram-se em [REPOSITORIOS
 - Outros sistemas classificadores
 
 ### 6. Técnicas de Regressão
+- Regressão linear simples e múltipla
+- Ridge Regression
+- LASSO
+- ElasticNet
+- Modelos NARX polinomiais (biblioteca [SysIdentPy](https://www.sysidentpy.org) em problemas de regressão)
 - Uso da biblioteca Scikit-Learn para regressão
-- Uso da biblioteca SysIdentPy em problemas de regressão
+
 
 ### 7. Sistemas Recomendadores
 - Filtragem colaborativa
