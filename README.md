@@ -1,4 +1,4 @@
-# Machine Learning Aplicado à Engenharia (EM CONSTRUÇÃO)
+# Machine Learning Aplicado à Engenharia
 
 Repositório de apoio à disciplina **Machine Learning Aplicado à Engenharia**, ofertada no curso de **Engenharia Elétrica** da **Universidade Federal de São João del-Rei (UFSJ)**.
 
