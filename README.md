@@ -1,4 +1,5 @@
 # Machine Learning Aplicado à Engenharia
+
 ## Universidade Federal de São João del-Rei - UFSJ
 
 Repositório de apoio à disciplina **Machine Learning Aplicado à Engenharia**, ofertada no curso de **Engenharia Elétrica** da **Universidade Federal de São João del-Rei (UFSJ)**.
@@ -28,11 +29,13 @@ As soluções do **Trabalho 1 (T1 - 2026/1)** de cada grupo encontram-se em [REP
 ## Conteúdo Programático
 
 ### 1. Python Básico
+
 - O Zen do Python
 - Anaconda, bibliotecas e ambientes
 - NumPy, Pandas e Matplotlib
 
 ### 2. Estatística e Probabilidade
+
 - Tendências centrais
 - Correlação e causalidade
 - Correlações espúrias
@@ -41,16 +44,19 @@ As soluções do **Trabalho 1 (T1 - 2026/1)** de cada grupo encontram-se em [REP
 - Variáveis aleatórias e distribuições probabilísticas
 
 ### 3. Dados em Python
+
 - Leitura de arquivos
 - Extração de dados de fontes confiáveis na internet
 - Descoberta e uso de APIs
 
 ### 4. Aprendizado de Máquina
+
 - Definições fundamentais
 - Sobreajuste e subajuste
 - Dilema viés-variância
 
 ### 5. Técnicas de Classificação
+
 - K-Nearest Neighbors
 - Regressão logística aplicada à classificação
 - Support Vector Machines
@@ -58,6 +64,7 @@ As soluções do **Trabalho 1 (T1 - 2026/1)** de cada grupo encontram-se em [REP
 - Uso da biblioteca Scikit-Learn para classificação
 
 ### 6. Técnicas de Regressão
+
 - Regressão linear simples e múltipla
 - Ridge Regression
 - LASSO
@@ -65,11 +72,12 @@ As soluções do **Trabalho 1 (T1 - 2026/1)** de cada grupo encontram-se em [REP
 - Modelos NARX polinomiais (biblioteca [SysIdentPy](https://www.sysidentpy.org) em problemas de regressão)
 - Uso da biblioteca Scikit-Learn para regressão
 
-
 ### 7. Sistemas Recomendadores
+
 - Filtragem colaborativa.
 
 ### 8. Aplicações em Sistemas Reais
+
 - Regressão aplicada à vibração da asa de um caça F-16 com dados experimentais de acelerômetro
 - Modelagem matemática de um sistema motor-gerador com dados experimentais
 - Benchmarks em problemas como predição de carga, previsão de passageiros na aviação comercial e sistemas de recomendação baseados em dados
@@ -86,7 +94,6 @@ A disciplina utiliza uma abordagem teórico-prática, combinando:
 ## Ambiente de Desenvolvimento
 
 Recomenda-se o uso de **Python** com gerenciamento de ambiente por **Conda**.
-
 
 ---
 
