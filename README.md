@@ -55,7 +55,6 @@ As soluções do **Trabalho 1 (T1 - 2026/1)** de cada grupo encontram-se em [REP
 - Support Vector Machines
 - Árvores de decisão e florestas aleatórias
 - Uso da biblioteca Scikit-Learn para classificação
-- Outros sistemas classificadores
 
 ### 6. Técnicas de Regressão
 - Regressão linear simples e múltipla
@@ -67,8 +66,7 @@ As soluções do **Trabalho 1 (T1 - 2026/1)** de cada grupo encontram-se em [REP
 
 
 ### 7. Sistemas Recomendadores
-- Filtragem colaborativa
-- Outras abordagens para recomendação
+- Filtragem colaborativa.
 
 ### 8. Aplicações em Sistemas Reais
 - Regressão aplicada à vibração da asa de um caça F-16 com dados experimentais de acelerômetro
