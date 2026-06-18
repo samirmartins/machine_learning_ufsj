@@ -1,4 +1,5 @@
 # Machine Learning Aplicado à Engenharia
+## Universidade Federal de São João del-Rei - UFSJ
 
 Repositório de apoio à disciplina **Machine Learning Aplicado à Engenharia**, ofertada no curso de **Engenharia Elétrica** da **Universidade Federal de São João del-Rei (UFSJ)**.
 
