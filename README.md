@@ -75,6 +75,8 @@ As soluções do **Trabalho 1 (T1)** de cada grupo encontram-se em [REPOSITORIOS
 ### 7. Sistemas Recomendadores
 
 - Filtragem colaborativa.
+- Baseline de Popularidade
+- Precision@K
 
 ### 8. Aplicações em Sistemas Reais
 
