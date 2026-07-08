@@ -17,7 +17,7 @@ A disciplina apresenta fundamentos e aplicações de aprendizado de máquina vol
 
 ## Soluções dos Trabalhos
 
-As soluções do **Trabalho 1 (T1)** de cada grupo encontram-se em [REPOSITORIOS_T1.MD](REPOSITORIOS_T1.MD).
+As soluções dos **Trabalhos 1 e 2 (T1 e T2)** de cada grupo encontram-se em [NESTE LINK](REPOSITORIOS_TRABALHOS_2026_1.MD), divididos por semestre letivo.
 
 ## Objetivos
 
